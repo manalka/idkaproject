@@ -1,0 +1,569 @@
+<!--<div class="px-5 col-12" style="margin-top: 5rem;">
+    <h1 class="mx-auto text-center mb-5">Register</h1>
+    <form class="col-7 mx-auto mt-5" action="" (submit)="register()">
+        <div class="d-flex col-12 my-3">
+            <input 
+                type="text" 
+                placeholder="UserNom" 
+                Nom="userNom" 
+                id="userNom" 
+                style="flex: 1; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light"
+                [(ngModel)]="Nom_utlisateur"
+            />
+            <input 
+                type="text" 
+                placeholder="Email" 
+                Nom="email" 
+                id="email" 
+                style="flex: 2; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light" 
+                [(ngModel)]="email"
+            />
+        </div>
+        <div class="d-flex col-12 my-3">
+            <input 
+                type="password" 
+                placeholder="Password" 
+                Nom="password" 
+                id="password" 
+                style="flex: 1; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light"
+                [(ngModel)]="password"
+            />
+            <input 
+                type="password" 
+                placeholder="Confirm password" 
+                Nom="confirmPassword" 
+                id="confirmPassword" 
+                style="flex: 1; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light" 
+                [(ngModel)]="passwordConfirm"
+            />
+        </div>
+        <div class="d-flex col-12 my-3">
+            <input 
+                type="text" 
+                placeholder="Address" 
+                Nom="address" 
+                id="address" 
+                style="flex: 4; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light"
+                [(ngModel)]="adresse"
+            />
+            <input 
+                type="text" 
+                placeholder="Phone" 
+                Nom="phone" 
+                id="phone" 
+                style="flex: 2; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light" 
+                [(ngModel)]="phone"
+            />
+        </div>
+        <input 
+            type="text" 
+            placeholder="Nom" 
+            Nom="Nom" 
+            id="Nom" 
+            style="border: 1px solid #fffa;" 
+            class="mx-3 bg-transparent rounded p-2 col-4 d-block text-light" 
+            [(ngModel)]="Nom"
+        />
+        <input 
+            type="submit"
+            value="Register" 
+            style="border: 1px solid #fffa;" 
+            class="mx-3 mt-5 rounded p-2 col-2 d-block btn btn-primary" 
+        />
+        <h4 
+            *ngIf="error"
+            style="text-align: center;" 
+            class="alert-danger p-2 m-5 rounded"
+        >{{error}}</h4>
+    </form>
+</div>
+
+
+
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" aria-label="login" style="background: color #9a616D;">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarlogin">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  routerLink="/home">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/login" >Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="h-100 "style="background-color: #9A616D;"  (submit)="register()">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img
+                  src="./assets/img1.webp"
+                  alt="Sample photo"
+                  class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">S'inscrire</h3>
+  
+                  <div class="row">
+                    
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="username">Nom d'utlisateur</label>
+                          <input type="text" id="username" name="username" class="form-control form-control-lg"  [(ngModel)]="username" />
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <label class="form-label" for="nom" >Nom</label>
+                                <input type="text" id="nom" name="nom" class="form-control form-control-lg" [(ngModel)]="nom"/>
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                <label class="form-label" for="prenom">Prénom</label>
+                                <input type="text" id="prenom" class="form-control form-control-lg" [(ngModel)]="prenom"/>
+                              </div>
+                        </div>
+                      
+                    
+                    <div class="col-md-6 mb-4">
+  
+                        <select class="select"  [(ngModel)]="ville">
+                          <option value="1">Ville</option>
+                          <option value="2">Agadir</option>
+                          <option value="3">Rabat</option>
+                          <option value="4">Marrakesh</option>
+                          <option value="2">Casa</option>
+                          <option value="2">Taza</option>
+                          <option value="2">Tiznit</option>
+                          <option value="2">Tanger</option>
+                          <option value="2">Oujda</option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="address">Adresse</label>
+                    <input type="text" id="address" name="address" class="form-control form-control-lg" [(ngModel)]="address"/>
+                  </div>
+  
+                 <!-- <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+  
+<h6 class="mb-0 me-4">Sexe: </h6>
+  
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="femaleGender"
+                        value="option1"
+                        [(ngModel)]="Nom"
+                      />
+                      <label class="form-check-label" for="femaleGender">Femme</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="maleGender"
+                        value="option2"
+                      />
+                      <label class="form-check-label" for="maleGender">Homme</label>
+                    </div>
+  
+  
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="email">Email ID</label>
+                    <input type="email" id="email" class="form-control form-control-lg" [(ngModel)]="email" />
+                  </div>
+  
+
+  
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="code">Mot de passe</label>
+                    <input type="password" id="code" class="form-control form-control-lg"  [(ngModel)]="password"/>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="codecon">Confirmer mot de passe</label>
+                    <input type="password" id="codecon" class="form-control form-control-lg" [(ngModel)]="passwordConfirm"/>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="num">Numéro de telephone</label>
+                    <input type="text" id="num" class="form-control form-control-lg"  [(ngModel)]="phone"/>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="profile"> <i class="fa  fa-camera"></i>Choisir votre photo de profil:</label>
+                    <input type="file" id="profile" accept="image/png, image/jpeg"  [(ngModel)]="profile"/>
+                  </div>
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-light btn-lg">Effacer tout</button>
+                   
+                        <button class="btn btn-dark btn-lg btn-block" type="button">inscrire</button>
+                        <h4 
+                        *ngIf="error"
+                        style="text-align: center;" 
+                        class="alert-danger p-2 m-5 rounded"
+                    >{{error}}</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+  <!--<div class="px-5 col-12" style="margin-top: 5rem;">
+    <h1 class="mx-auto text-center mb-5">Register</h1>
+    <form class="col-7 mx-auto mt-5" action="" (submit)="register()">
+        <div class="d-flex col-12 my-3">
+            <input 
+                type="text" 
+                placeholder="UserNom" 
+                Nom="userNom" 
+                id="userNom" 
+                style="flex: 1; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light"
+                [(ngModel)]="Nom_utlisateur"
+            />
+            <input 
+                type="text" 
+                placeholder="Email" 
+                Nom="email" 
+                id="email" 
+                style="flex: 2; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light" 
+                [(ngModel)]="email"
+            />
+        </div>
+        <div class="d-flex col-12 my-3">
+            <input 
+                type="password" 
+                placeholder="password" 
+                Nom="password" 
+                id="password" 
+                style="flex: 1; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light"
+                [(ngModel)]="password"
+            />
+            <input 
+                type="password" 
+                placeholder="Confirm password" 
+                Nom="confirmPassword" 
+                id="confirmPassword" 
+                style="flex: 1; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light" 
+                [(ngModel)]="passwordConfirm"
+            />
+        </div>
+        <div class="d-flex col-12 my-3">
+            <input 
+                type="text" 
+                placeholder="Address" 
+                Nom="address" 
+                id="address" 
+                style="flex: 4; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light"
+                [(ngModel)]="adresse"
+            />
+            <input 
+                type="text" 
+                placeholder="Phone" 
+                Nom="phone" 
+                id="phone" 
+                style="flex: 2; border: 1px solid #fffa;" 
+                class="mx-3 bg-transparent rounded p-2 text-light" 
+                [(ngModel)]="phone"
+            />
+        </div>
+        <input 
+            type="text" 
+            placeholder="Nom" 
+            Nom="Nom" 
+            id="Nom" 
+            style="border: 1px solid #fffa;" 
+            class="mx-3 bg-transparent rounded p-2 col-4 d-block text-light" 
+            [(ngModel)]="Nom"
+        />
+        <input 
+            type="submit"
+            value="Register" 
+            style="border: 1px solid #fffa;" 
+            class="mx-3 mt-5 rounded p-2 col-2 d-block btn btn-primary" 
+        />
+        <h4 
+            *ngIf="error"
+            style="text-align: center;" 
+            class="alert-danger p-2 m-5 rounded"
+        >{{error}}</h4>
+    </form>
+</div>
+-->
+
+
+<!--<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" aria-label="login" style="background: color #9a616D;">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarlogin">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  routerLink="/home">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/login" >Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="h-100 "style="background-color: #9A616D;"  (submit)="register()">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img
+                  src="./assets/img1.webp"
+                  alt="Sample photo"
+                  class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">S'inscrire</h3>
+  
+                  <div class="row">
+                    
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="username">Nom d'utlisateur</label>
+                          <input type="text" id="username" class="form-control form-control-lg"  [(ngModel)]="Nom_utlisateur" />
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                                <label class="form-label" for="nom" >Nom</label>
+                                <input type="text" id="nom" class="form-control form-control-lg" [(ngModel)]="Nom"/>
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                <label class="form-label" for="prenom">Prénom</label>
+                                <input type="text" id="prenom" class="form-control form-control-lg" [(ngModel)]="Prenom"/>
+                              </div>
+                        </div>
+                      
+                    
+                    <div class="col-md-6 mb-4">
+  
+                        <select class="select"  [(ngModel)]="Ville">
+                          <option value="1">Ville</option>
+                          <option value="2">Agadir</option>
+                          <option value="3">Rabat</option>
+                          <option value="4">Marrakesh</option>
+                          <option value="2">Casa</option>
+                          <option value="2">Taza</option>
+                          <option value="2">Tiznit</option>
+                          <option value="2">Tanger</option>
+                          <option value="2">Oujda</option>
+                        </select>
+                      </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="adresse">Adresse</label>
+                    <input type="text" id="adresse" class="form-control form-control-lg" [(ngModel)]="adresse"/>
+                  </div>
+  
+                 <!-- <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+  
+<h6 class="mb-0 me-4">Sexe: </h6>
+  
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="femaleGender"
+                        value="option1"
+                        [(ngModel)]="Nom"
+                      />
+                      <label class="form-check-label" for="femaleGender">Femme</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="maleGender"
+                        value="option2"
+                      />
+                      <label class="form-check-label" for="maleGender">Homme</label>
+                    </div>
+  
+  
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="email">Email ID</label>
+                    <input type="email" id="email" class="form-control form-control-lg" [(ngModel)]="email" />
+                  </div>
+  
+
+  
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="code">Mot de passe</label>
+                    <input type="password" id="code" class="form-control form-control-lg"  [(ngModel)]="password"/>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="codecon">Confirmer mot de passe</label>
+                    <input type="password" id="codecon" class="form-control form-control-lg" [(ngModel)]="passwordConfirm"/>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="phone">Numéro de telephone</label>
+                    <input type="text" id="phone" class="form-control form-control-lg"  [(ngModel)]="phone"/>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="profile"> <i class="fa  fa-camera"></i>Choisir votre photo de profil:</label>
+                    <input type="file" id="profile" accept="image/png, image/jpeg"  [(ngModel)]="profile"/>
+                  </div>
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-light btn-lg">Effacer tout</button>
+                   
+                        <button class="btn btn-dark btn-lg btn-block" type="button">inscrire</button>
+                        <h4 
+                        *ngIf="error"
+                        style="text-align: center;" 
+                        class="alert-danger p-2 m-5 rounded"
+                    >{{error}}</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" aria-label="login" style="background: color #9a616D;">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarlogin">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="h-100 " style="background-color: #9A616D;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img src="./assets/img1.webp" alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">S'inscrire</h3>
+
+                  <div class="row">
+
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="username">Nom d'utlisateur</label>
+                      <input type="text" id="username" name="username" formControlName="username" class="form-control form-control-lg" />
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <label class="form-label" for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" formControlName="nom" class="form-control form-control-lg" />
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <label class="form-label" for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" formControlName="prenom" class="form-control form-control-lg" />
+                      </div>
+                    </div>
+
+
+                    <div class="col-md-6 mb-4">
+
+                      <select class="select" formControlName="ville">
+                        
+                        <option value="Agadir">Agadir</option>
+                        <option value="Rabat">Rabat</option>
+                        <option value="Marrakesh">Marrakesh</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Taza">Taza</option>
+                        <option value="Tiznit">Tiznit</option>
+                        <option value="Tanger">Tanger</option>
+                        <option value="Oujda">Oujda</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="address">Adresse</label>
+                    <input type="text" id="address" name="address" formControlName="address" class="form-control form-control-lg"  />
+                  </div>
+
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="email">Email ID</label>
+                    <input type="email" id="email" name="email" formControlName="email" class="form-control form-control-lg" />
+                  </div>
+
+
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="password">Mot de passe</label>
+                    <input type="password" id="password" formControlName="password" name="password" class="form-control form-control-lg" />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="codecon">Confirmer mot de passe</label>
+                    <input type="password" id="codecon" class="form-control form-control-lg"
+                       />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="phone">Numéro de telephone</label>
+                    <input type="text" id="phone" name="phone" formControlName="phone" class="form-control form-control-lg" />
+                  </div>
+                  <!--<div class="form-outline mb-4">
+                    <label class="form-label" for="profile"> <i class="fa  fa-camera"></i>Choisir votre photo de profil:</label>
+                    <input type="file" id="profile" accept="image/png, image/jpeg"/>
+                  </div>-->
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-light btn-lg">Effacer tout</button>
+
+                    <button class="btn btn-dark btn-lg btn-block" type="submit">inscrire</button>
+                    <!--<h4 *ngIf="error" style="text-align: center;" class="alert-danger p-2 m-5 rounded">{{error}}</h4>-->
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

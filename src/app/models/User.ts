@@ -1,6 +1,6 @@
 export class User {
     id !: Number
-    Nom_utlisateur ! : string
+    Nom_utilisateur! : string
     Nom !: string
     Prenom !:string
     Ville!:string

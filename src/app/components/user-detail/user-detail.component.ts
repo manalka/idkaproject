@@ -17,7 +17,7 @@ export class UserDetailComponent implements OnInit {
     user !: User;
     editMode : boolean = false;
      
-    Nom_utlisateur ! : string
+    Nom_utilisateur ! : string
     Nom !: string
     Prenom !:string
     Ville!:string
@@ -39,7 +39,7 @@ export class UserDetailComponent implements OnInit {
             this.user = user
             
             this.Nom = user.Nom;
-            this.Nom_utlisateur = user.Nom_utlisateur;
+            this.Nom_utilisateur = user.Nom_utilisateur;
             this.Prenom=user.Prenom;
             this.Ville=user.Ville;
             this.adresse = user.adresse;
@@ -58,8 +58,8 @@ export class UserDetailComponent implements OnInit {
     }
 
     updateUser () {
-        this.usersService.updateUser(this.user.id, this.Nom_utlisateur,this.Nom,this.Prenom,this.Ville, this.email,this.user.password,this.adresse, this.phone,this.profile).subscribe((user : User) => {
-            this.usersService.createToken(user.Nom_utlisateur).subscribe((token : Token) => {
+        this.usersService.updateUser(this.user.id, this.Nom_utilisateur,this.Nom,this.Prenom,this.Ville, this.email,this.user.password,this.adresse, this.phone,this.profile).subscribe((user : User) => {
+            this.usersService.createToken(user.Nom_utilisateur).subscribe((token : Token) => {
                 localStorage.removeItem('token')
                 console.log(localStorage.getItem('token'));
                 localStorage.setItem('token', token.token)
